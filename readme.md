@@ -4,7 +4,7 @@
 
 ## Setup
 
-First you'll need to have [growlnotify](http://growl.info/extras.php#growlnotify) installed.
+First you'll need to have [Growl](http://growl.info/) and [growlnotify](http://growl.info/extras.php#growlnotify) installed.
 
 Next install `growlcoffee` with: 
 
