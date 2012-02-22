@@ -18,7 +18,7 @@ Whenever a file is updated a growl notification will occur letting you know if t
 
 ## License
 
-growlcoffee is distributed under the MIT License.
+growlcoffee is distributed under the [MIT License](https://github.com/kgn/growlcoffee/blob/master/license).
 
 ---
 
