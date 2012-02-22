@@ -1,4 +1,4 @@
-# [Growl](http://growl.info/) notifications for [CoffeeScript](http://coffeescript.org/)
+# Growl notifications for CoffeeScript
 
 ![screenshot](https://github.com/kgn/growlcoffee/raw/master/screenshot.png)
 
@@ -19,7 +19,3 @@ Whenever a file is updated a growl notification will occur letting you know if t
 ## License
 
 growlcoffee is distributed under the [MIT License](https://github.com/kgn/growlcoffee/blob/master/license).
-
----
-
-Requires [Node.js](http://nodejs.org/) 0.6+
