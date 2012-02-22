@@ -2,7 +2,7 @@
     "author": "David Keegan",
     "name": "growlcoffee",
     "description": "Growl notifications for CoffeeScript",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "homepage": "https://github.com/kgn/growlcoffee",
     "keywords": "coffeescript, growl, growlnotify, notifications",
     "repository": {
