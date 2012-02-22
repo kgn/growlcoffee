@@ -4,7 +4,7 @@ coffeescript = require('coffee-script')
 filename = (filepath)->
     filepath.split('/').slice(-1)
 
-notify = (title, message, type)-> #TODO: show stdout
+notify = (title, message, type)-> #TODO: show stderr
     exec("growlnotify #{title} -n 'CoffeeScript' -m '#{message}' --image '#{__dirname}/#{type}.png'")
 
 coffeescript.on('failure', (error, task)->
