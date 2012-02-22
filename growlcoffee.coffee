@@ -1,17 +1,18 @@
 {exec} = require('child_process')
-coffeescript = require('coffee-script')
+coffee = require('coffee-script')
 
 filename = (filepath)->
     filepath.split('/').slice(-1)
 
-notify = (title, message, type)-> #TODO: show stderr
-    exec("growlnotify #{title} -n 'CoffeeScript' -m '#{message}' --image '#{__dirname}/#{type}.png'")
+growl = (title, message, imagename)->
+    exec("growlnotify #{title} -n 'CoffeeScript' -m '#{message}' --image '#{__dirname}/#{imagename}.png'")
 
-coffeescript.on('failure', (error, task)->
-    issue = "#{error}".split(',')[1].trim()
-    notify(issue, filename(task.file), 'failure')
+coffee.on('failure', (error, task)->
+    issue = error.message.split(',')[1].trim()
+    growl(issue, filename(task.file), 'failure')
+    console.error(error.message)
 )
 
-coffeescript.on('success', (task)->
-    notify('Compiled', filename(task.file), 'success')
+coffee.on('success', (task)->
+    growl('Compiled', filename(task.file), 'success')
 )

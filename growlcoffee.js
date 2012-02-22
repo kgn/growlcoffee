@@ -1,19 +1,20 @@
 (function() {
-  var coffeescript, exec, filename, notify;
+  var coffee, exec, filename, growl;
   exec = require('child_process').exec;
-  coffeescript = require('coffee-script');
+  coffee = require('coffee-script');
   filename = function(filepath) {
     return filepath.split('/').slice(-1);
   };
-  notify = function(title, message, type) {
-    return exec("growlnotify " + title + " -n 'CoffeeScript' -m '" + message + "' --image '" + __dirname + "/" + type + ".png'");
+  growl = function(title, message, imagename) {
+    return exec("growlnotify " + title + " -n 'CoffeeScript' -m '" + message + "' --image '" + __dirname + "/" + imagename + ".png'");
   };
-  coffeescript.on('failure', function(error, task) {
+  coffee.on('failure', function(error, task) {
     var issue;
-    issue = ("" + error).split(',')[1].trim();
-    return notify(issue, filename(task.file), 'failure');
+    issue = error.message.split(',')[1].trim();
+    growl(issue, filename(task.file), 'failure');
+    return console.error(error.message);
   });
-  coffeescript.on('success', function(task) {
-    return notify('Compiled', filename(task.file), 'success');
+  coffee.on('success', function(task) {
+    return growl('Compiled', filename(task.file), 'success');
   });
 }).call(this);
