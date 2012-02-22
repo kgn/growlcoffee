@@ -3,10 +3,11 @@
   exec = require('child_process').exec;
   coffee = require('coffee-script');
   filename = function(filepath) {
-    return filepath.split('/').slice(-1);
+    return filepath.split('/').slice(-1)[0];
   };
   growl = function(title, message, imagename) {
-    return exec("growlnotify " + title + " -n 'CoffeeScript' -m '" + message + "' --image '" + __dirname + "/" + imagename + ".png'");
+    console.log(title, message, imagename);
+    return exec("growlnotify '" + title + "' -n 'CoffeeScript' -m '" + message + "' --image '" + __dirname + "/" + imagename + ".png'");
   };
   coffee.on('failure', function(error, task) {
     var issue;
