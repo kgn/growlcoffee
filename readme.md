@@ -6,7 +6,7 @@
 
 First you'll need to have [Growl](http://growl.info/) and [growlnotify](http://growl.info/extras.php#growlnotify) installed.
 
-Next install `growlcoffee` with: 
+Next install `growlcoffee` with [npm](http://npmjs.org/):
 
     npm -g install growlcoffee
 
