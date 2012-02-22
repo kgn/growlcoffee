@@ -5,7 +5,6 @@ filename = (filepath)->
     filepath.split('/').slice(-1)[0]
 
 growl = (title, message, imagename)->
-    console.log(title, message, imagename)
     exec("growlnotify '#{title}' -n 'CoffeeScript' -m '#{message}' --image '#{__dirname}/#{imagename}.png'")
 
 coffee.on('failure', (error, task)->

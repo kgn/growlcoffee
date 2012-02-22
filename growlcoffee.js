@@ -6,7 +6,6 @@
     return filepath.split('/').slice(-1)[0];
   };
   growl = function(title, message, imagename) {
-    console.log(title, message, imagename);
     return exec("growlnotify '" + title + "' -n 'CoffeeScript' -m '" + message + "' --image '" + __dirname + "/" + imagename + ".png'");
   };
   coffee.on('failure', function(error, task) {
