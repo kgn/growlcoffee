@@ -1,6 +1,6 @@
 # Growl notifications for CoffeeScript compiling!
 
-![screenshot](https://github.com/kgn/growlcoffee/screenshot.png)
+![screenshot](https://github.com/kgn/growlcoffee/raw/master/screenshot.png)
 
 First you'll need to have [growlnotify](http://growl.info/extras.php#growlnotify) installed.
 
